@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="base-section anim-down">
+    <div class="container">
+       <div class="row">
+           <div class="col-sm text-center">
+               <h2>Welcome to Dynamic Youth Blog </h2>
+            <article> Here your will find all the Articles Published at DYAO</article>
+           </div>
+       </div>
+    </div>
+</div>
+
+    <!-- programs feature -->
+    <div class="programs-section container p-5">
+        <!-- <h1 class="text-center"></h1>
+        <p class="text-center">Some of the Programs that we Active</p>
+         -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img src="{% static 'website/img/blog/01.jpg' %}" class="card-img-top" alt="blog post one">
+                <div class="card-body">
+                  <h5 class="card-title">Second PDC</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to 
+                      additional content. This content is a little bit longer.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="{% static 'website/img/blog/2.jpg' %}" class="card-img-top" alt="Peace ">
+                <div class="card-body">
+                  <h5 class="card-title">Peace Building</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    This card has supporting text below as a natural lead-in to additional content.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 1 month ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="{% static 'website/img/blog/3.jpg' %}" class="card-img-top" alt="somthing">
+                <div class="card-body">
+                  <h5 class="card-title">DYAO Initiatial program</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 months ago</small>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+    </div>
+
+{% endblock content %}

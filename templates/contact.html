@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="base-section anim-down">
+    <div class="container">
+       <div class="row">
+           <div class="col-sm text-center">
+               <h2>Want to get to us </h2>
+            <article> Here are some of the ways to contact us</article>
+           </div>
+       </div>
+    </div>
+</div>
+
+    <!-- contact-us section-->
+    <div class="contact-us-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <h3 class="text-center pt-4">Send us Message</h3>
+                    <form>
+                        <div class="row">
+                            <div class="col-sm pt-2">
+                            <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col-sm pt-3">
+                            <input type="email" class="form-control" placeholder="email">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="5" placeholder="Enter your message here" id="comment"></textarea>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm pt-3 d-flex justify-content-end">
+                                <input class="btn btn-primary justify-content-end" type="submit"  name="Send" id="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm">
+                    <div class="row pt-4">
+                        <iframe  class= "mape" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12135.435148041288!2d55.304622998048366!3d25.274404755797516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sae!4v1608589645592!5m2!1sen!2sae" width="600" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <h3 class="pt-2">Visit us in persion</h3>
+                            <p><i class=" fas fa-map-marker-alt"></i> <span class="pl-3"> &nbsp;&nbsp;your Address here</span> </p>
+                            <p><i class=" fas fa-phone-alt"></i> <span class="pl-3">&nbsp;&nbsp;your phone here</span></p>
+                            <p><i class=" fas fa-envelope"></i>  <span class="pl-3">&nbsp;&nbsp;your email here</span> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
