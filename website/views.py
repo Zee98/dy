@@ -20,3 +20,7 @@ def report(request):
 
 def team(request):
     return render(request, "team.html")
+
+
+def sms(request):
+    return "df"

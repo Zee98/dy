@@ -26,4 +26,5 @@ urlpatterns = [
     path("report", views.report, name="report"),
     path("team", views.team, name="team"),
     path("about", views.about, name="about"),
+    path("contact/sms", views.sms, name="sms"),
 ]
