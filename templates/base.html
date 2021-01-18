@@ -92,13 +92,13 @@
                 </div>
                 <div class="col-sm">
                     <h3 class="mt-5 mb-3">Sign up to receive updates</h3>
-                    <form action="">
+                    <form action="{% url 'subscribe' %}" method="POST"> {% csrf_token %}
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="your email here" aria-label="your email here" aria-describedby="button-addon2">
+                            <input type="text" class="form-control" name="email" placeholder="your email here" aria-label="your email here" aria-describedby="button-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Update</button>
+                                <button class="btn btn-outline-secondary" type="submit" value="Subscribe" id="button-addon2">Update</button>
                             </div>
-                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

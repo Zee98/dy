@@ -303,26 +303,26 @@
             <div class="row">
                 <div class="col-sm anim-top">
                     <h3 class="text-center pt-4 ">Send us Message</h3>
-                    <form>
+                    <form method="POST" action="{% url 'sms' %}"> {% csrf_token %}
                         <div class="row">
                             <div class="col-sm pt-2">
-                            <input type="text" class="form-control" placeholder="First name">
+                            <input type="text" name="name" class="form-control" placeholder="Name">
                             </div>
                             <div class="col-sm pt-2">
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="5" placeholder="Enter your message here" id="comment"></textarea>
+                                    <textarea class="form-control" name="message" rows="5" placeholder="Enter your message here" id="comment"></textarea>
                                     </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm pt-3 d-flex justify-content-end">
-                                <input class="btn btn-primary justify-content-end" type="submit"  name="Send" id="">
+                                <input class="btn btn-primary justify-content-end" type="submit" value="Send"  name="Send" id="">
                             </div>
                         </div>
                     </form>
