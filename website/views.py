@@ -3,15 +3,29 @@ from django.contrib import messages
 from django.core.mail import send_mail
 # from website.forms import SMS
 from website.models import Sms, Subscriberlist, Post
+from django.views.generic import ListView, DetailView
 
 def index(request):
     return render(request, "index.html")
 
-def blog(request):
-    data = {
-        'posts': Post.objects.all()
-    }
-    return render(request, "blog.html", data)
+class PostlistView(ListView):
+    model = Post
+    template_name = 'blog.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 3
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'post_detail.html'
+
+
+
+# def blog(request):
+#     data = {
+#         'posts': Post.objects.all()
+#     }
+#     return render(request, "blog.html", data)
 
 def about(request):
     return render(request, "about.html")
@@ -28,8 +42,11 @@ def report(request):
 def team(request):
     return render(request, "team.html")
 
-def post(request):
-    return render(request, "post.html")
+def post(request, id=2):
+    data = {
+        'post': Post.objects.get(pk=id)
+    }
+    return render(request, "post.html", data)
 
 
 def subscriber(request):

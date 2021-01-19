@@ -60,12 +60,12 @@ textsToLeft.forEach(text => {
   })
 });
 
-gsap.from('.footer-section', {
-    scrollTrigger: {
-        trigger : ".footer-section",
-        toggleActions: "restart complete restart reverse"
-    } ,
-    y : '20',
-    opacity:0,
-    duration:2,   
-})
+// gsap.from('.footer-section', {
+//     scrollTrigger: {
+//         trigger : ".footer-section",
+//         toggleActions: "restart complete restart reverse"
+//     } ,
+//     y : '20',
+//     opacity:0,
+//     duration:2,   
+// })

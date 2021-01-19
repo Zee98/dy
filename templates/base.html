@@ -56,17 +56,17 @@
 {% endblock content %}
 
     <!-- footer -->
-    <div class="footer-section ">
+    <div class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-sm">
                     <div class="row" >
                         <div class="col" >
-                            <div class="container footer-logo mt-3">
+                            <div class="container footer-logo mt-4">
                                 <img src="{% static 'website/img/logo.jpg' %}" alt="LOGO">
                             </div>
-                            <div class="container mt-1 text-center">
-                                <h3>
+                            <div class="container text-center">
+                                <h3 class="pt-3">
                                     <a href="https://www.facebook.com/DynamicYouth.af" target="_blank"> <i class="fab fa-facebook"></i></a>
                                     <a href="https://www.instagram.com/dynamicyouth.af" target="_blank"> <i class="fab fa-instagram"></i></a> 
                                     <a href="https://twitter.com/Dynamicyouth_af" target="_blank"><i class="fab fa-twitter   "></i></a> 
@@ -94,7 +94,7 @@
                     <h3 class="mt-5 mb-3">Sign up to receive updates</h3>
                     <form action="{% url 'subscribe' %}" method="POST"> {% csrf_token %}
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" name="email" placeholder="your email here" aria-label="your email here" aria-describedby="button-addon2">
+                            <input type="email" class="form-control" required name="email" placeholder="your email here" aria-label="your email here" aria-describedby="button-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="submit" value="Subscribe" id="button-addon2">Update</button>
                             </div>
@@ -106,12 +106,12 @@
         <div class="footer">
             <div class="container">
                 <div class="row mt-2">
-                    <div class="col-sm ">
+                    <div class="col-sm">
                         <ul class="list-inline">
                             <li class="list-inline-item"><a href="#">Privacy</a> </li>
                             <li class="list-inline-item"><a href="#">Policy</a></li>
                             <li class="list-inline-item"><a href="#">Terms and conditions</a></li>
-                            </ul>
+                        </ul>
                     </div>
                     <div class="col-sm d-flex justify-content-end">
                         <p>Made with <i class="fa fa-heart text-danger"></i> by <a href="https://facebook.com/zaman.ehsani" target="_blank">Zaman</a></p>

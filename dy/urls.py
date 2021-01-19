@@ -16,13 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from website import views
+from website.views import PostlistView, PostDetailView
 from django.conf import settings
 from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name="index"),
-    path("blog", views.blog, name="blog"),
+    path("blog", PostlistView.as_view(), name="blog"),
+    path("blog/<int:pk>", PostDetailView.as_view(), name="blog-detail"),
     path("contact", views.contact, name="contact"),
     path("initiatives", views.initiatives, name="initiatives"),
     path("report", views.report, name="report"),
@@ -30,7 +33,7 @@ urlpatterns = [
     path("about", views.about, name="about"),
     path("contact/sms", views.sms, name="sms"),
     path('subscribed', views.subscriber , name='subscribe'),
-    path('post', views.post, name = 'post'),
+    # path('post', views.post, name = 'post'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -30,6 +30,9 @@ class Post(models.Model):
     date_posted = models.DateField(default=timezone.now)
     abstract = models.TextField(null=True, blank=True)
     auther = models.ForeignKey(User, on_delete=models.CASCADE)
+    photo = models.ImageField(default = 'post_photo.jpg', upload_to="post_pics", null=True, blank=True)
+    
 
     def __str__(self):
         return self.title
+

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="base-section">
+    <div class="container">
+       <div class="row">
+           <div class="col-sm text-center">
+               <h2>{{object.title}} </h2>
+            <article> by {{object.auther}} on {{object.date_posted}}</article>
+           </div>
+       </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col col-lg-8 m-lg-auto">
+            <div class="card shadow h-100 mb-4">
+              <img src="{{ object.photo.url }}" class="card-img-top" alt="Peace ">
+              <div class="card-body">
+                <h5 class="card-title">{{object.title}}</h5>
+                <article class="card-title" >
+                    {{object.content}}
+                </article>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

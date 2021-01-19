@@ -20,29 +20,52 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
           {% for post in posts %}
             <div class="col">
-              <div class="card shadow h-100">
-                <img src="{% static 'website/img/blog/01.jpg' %}" class="shadow card-img-top" alt="blog post one">
-                <div class="card-body">
-                  <div class="row  align-items-center mb-2">
-                    <div class="col-2">
-                      <img src="{{ post.auther.profile.image.url }}" alt="user profile" class="shadow rounded-circle" width="40" >
+                <div class="card shadow h-100">
+                  <a  href="{% url 'blog-detail' post.id %}"> <img src="{{post.photo.url }}" class="shadow card-img-top" alt="blog post one"></a>
+                  <div class="card-body">
+                    <div class="row  align-items-center mb-2">
+                      <div class="col-2">
+                        <img src="{{ post.auther.profile.image.url }}" alt="user profile" class="shadow rounded-circle" width="40" >
+                      </div>
+                      <div class="col">
+                        <span class="text-primary">{{post.auther}} | {{post.date_posted}}</span>
+                      </div>
                     </div>
-                    <div class="col">
-                      <span class="text-primary">{{post.auther}} | {{post.date_posted}}</span>
-                    </div>
+                    <h5 class="card-title "><a class="text-decoration-none" href="{% url 'blog-detail' post.id %}">{{post.title}}</a></h5>
+                    <p class="card-text">
+                      {{post.abstract}}
+                    </p>
                   </div>
-                 
-                  <h5 class="card-title ">{{post.title}}</h5>
-                  <p class="card-text">
-                    {{post.abstract}}
-                  </p>
                 </div>
-              </div>
+              
             </div>
            {% endfor %}
             
         </div>
-        
+        <div class="row mt-5">
+            <div class="col">
+              {% if is_paginated %}
+
+                {% if page_obj.has_previous %}
+                  <a class="btn btn-outline-info mb-4" href="?page=1">First</a  >
+                  <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                  {% if page_obj.number == num %}
+                    <a class="btn btn-info mb-4" href="?page={{num}}">{{num}}</a>
+                  {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{num}}</a>
+                  {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                  <a class="btn btn-outline-info mb-4" href="?page={{page_obj.next_page_number }}">Next</a>
+                  <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages }}">Last</a>
+                {% endif %}
+              {% endif %}
+            </div>
+       </div>
     </div>
 
 {% endblock content %}
