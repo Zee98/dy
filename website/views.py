@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 # from website.forms import SMS
-from website.models import Sms, Subscriberlist, Post
+from website.models import Sms, Subscriberlist, Post, Member
 from django.views.generic import ListView, DetailView
 
-def index(request):
-    return render(request, "index.html")
+class IndexViewList(ListView):
+    model = Member
+    context_object_name = 'objects'
+    template_name = 'index.html'
 
 class PostlistView(ListView):
     model = Post
@@ -15,11 +17,14 @@ class PostlistView(ListView):
     ordering = ['-date_posted']
     paginate_by = 3
 
+class MemberViewList(ListView):
+    model = Member
+    context_object_name = 'objects'
+    template_name = 'team.html' 
+
 class PostDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
-
-
 
 # def blog(request):
 #     data = {

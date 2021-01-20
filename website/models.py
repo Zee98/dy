@@ -36,3 +36,20 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+
+class Member(models.Model):
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    email = models.EmailField()
+    position = models.CharField(max_length=200)
+    bio = models.TextField(null=True, blank=True)
+    date_joined = models.DateField(null=True, blank=True)
+    facebook = models.URLField(null=True, blank=True)
+    instagram = models.URLField(null=True, blank=True)
+    twitter = models.URLField(null=True, blank=True)
+    linkedin = models.URLField(null=True, blank=True)
+    whatsapp  = models.IntegerField(null=True, blank=True)
+    photo = models.ImageField(default = 'default.png', upload_to="member_profile_pics")
+
+    def __str__(self):
+        return self.first_name

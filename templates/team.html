@@ -13,41 +13,44 @@
 </div>
 
 <div class="team-section" style="background-color: white;">
-    <div class="container pt-3 pb-3">
+    <div class="container pt-3">
         <h1 class="text-center " style="color: #001a2b;">Meet Our Team</h1>
         <div class="row">
-            <div class="col-sm">
+            {% for object in objects %}
+            <div class="col-sm col-lg-4">
                 <div class="card text-center">
-                    <div class=" ">
-                        <img src=" {% static 'website/img/boy.jpg' %} " class="rounded-circle" alt="Profile">
+                    <div class="">
+                        <img src="{{ object.photo.url }}" class="rounded-circle shadow" alt="Profile">
                     </div>
-                    <div class="card-outer shadow p-2">
-                    <div class="card inside-card">
-                        <div class="card-body pb-0">
-                            <h4 class="card-title pt-3">Kazim Haidari</h4>
-                            <p class="">kazimhaidari20@gmail.com</p>
-                            <div class="container">
-                                <h3>
-                                    <a href="https://www.facebook.com/Haidari.Kazim" target="_blank"><i class="fab fa-facebook-f mr-3 "></i></a>
-                                    <a href="https://www.instagram.com/kazimhaidari_14/" target="_blank"><i class="fab fa-instagram  mr-3 "></i></a> 
-                                    <a href="https://twitter.com/kazim_haidari" target="_blank"><i class="fab fa-twitter    mr-3 "></i></a> 
-                                    <a href="https://www.linkedin.com/in/mohammad-kazim-haidari-167410140/" target="_blank"><i class="fab fa-linkedin   mr-3 "></i></a> 
-                                 </h3>
+                    <div class="card-outer shadow border p-2">
+                        <div class="card inside-card">
+                            <div class="card-body pb-0">
+                                <h4 class="card-title pt-3">{{ object.first_name }} {{object.last_name}}</h4>
+                                <p class="">{{object.email}}</p>
+                                <div class="container">
+                                    <h3>
+                                        <a href="{{object.facebook}}" target="_blank"><i class="fab fa-facebook-f mr-3 "></i></a>
+                                        <a href="{{object.instagram}}" target="_blank"><i class="fab fa-instagram  mr-3 "></i></a> 
+                                        <a href="{{object.twitter}}" target="_blank"><i class="fab fa-twitter    mr-3 "></i></a> 
+                                        <a href="{{object.linkedin}}" target="_blank"><i class="fab fa-linkedin   mr-3 "></i></a> 
+                                    </h3>
+                                </div>
                             </div>
                         </div>
-                        </div>
                         <div class="position">
-                            <h4>Co-founder</h4>
+                            <h4>{{object.position}}</h4>
                         </div>
                     </div>
                     <div class="card-footer shadow p-2">
                     <div class="card-footer-body">
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">{{object.bio}}  </p>
                     </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm">
+            {% endfor %}
+
+            <!-- <div class="col-sm">
                 <div class="card text-center">
                     <div class=" ">
                         <img src=" {% static 'website/img/girl.jpg' %}" class="rounded-circle" alt="Profile">
@@ -73,11 +76,15 @@
                     </div>
                     <div class="card-footer shadow p-2">
                     <div class="card-footer-body">
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">This is a longer card with supporting text below as a natural 
+                            lead-in to additional content. This content is a little bit longer.
+                        
+                        </p>
                     </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-sm">
                 <div class="card text-center">
                     <div class=" ">
@@ -105,11 +112,14 @@
                     </div>
                     <div class="card-footer shadow p-2">
                         <div class="card-footer-body">
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">This is a longer card with supporting text below as a natural 
+                                lead-in to additional content. This content is a little bit longer.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-sm">
                 <div class="card text-center">
                     <div class=" ">
@@ -140,7 +150,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
         </div>
     </div>
 </div>

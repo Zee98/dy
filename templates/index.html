@@ -143,38 +143,40 @@
             <div class="container">
                 <h1 class="text-center anim-down">Meet Our Team</h1>
                 <div class="card-team">
+                    {% for object in objects %}
                     <div class="container ">
-                        <div class="card  text-center">
-                            <div class=" ">
-                                <img src=" {% static 'website/img/boy.jpg' %} " class="rounded-circle" alt="Profile">
+                        <div class="card text-center">
+                            <div class="">
+                                <img src="{{ object.photo.url }}" class="rounded-circle shadow" alt="Profile">
                             </div>
-                            <div class="card-outer shadow p-2">
-                            <div class="card inside-card">
-                                <div class="card-body pb-0">
-                                    <h4 class="card-title pt-3">Kazim Haidari</h4>
-                                    <p class="">kazimhaidari20@gmail.com</p>
-                                    <div class="container">
-                                        <h3>
-                                           <a href="https://www.facebook.com/Haidari.Kazim" target="_blank"><i class="fab fa-facebook-f mr-3 "></i></a>
-                                           <a href="https://www.instagram.com/kazimhaidari_14/" target="_blank"><i class="fab fa-instagram  mr-3 "></i></a> 
-                                           <a href="https://twitter.com/kazim_haidari" target="_blank"><i class="fab fa-twitter    mr-3 "></i></a> 
-                                           <a href="https://www.linkedin.com/in/mohammad-kazim-haidari-167410140/" target="_blank"><i class="fab fa-linkedin   mr-3 "></i></a> 
-                                        </h3>
+                            <div class="card-outer shadow border p-2">
+                                <div class="card inside-card">
+                                    <div class="card-body pb-0">
+                                        <h4 class="card-title pt-3">{{ object.first_name }} {{object.last_name}}</h4>
+                                        <p class="">{{object.email}}</p>
+                                        <div class="container">
+                                            <h3>
+                                                <a href="{{object.facebook}}" target="_blank"><i class="fab fa-facebook-f mr-3 "></i></a>
+                                                <a href="{{object.instagram}}" target="_blank"><i class="fab fa-instagram  mr-3 "></i></a> 
+                                                <a href="{{object.twitter}}" target="_blank"><i class="fab fa-twitter    mr-3 "></i></a> 
+                                                <a href="{{object.linkedin}}" target="_blank"><i class="fab fa-linkedin   mr-3 "></i></a> 
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
                                 <div class="position">
-                                    <h4>Co-founder</h4>
+                                    <h4>{{object.position}}</h4>
                                 </div>
                             </div>
                             <div class="card-footer shadow p-2">
                             <div class="card-footer-body">
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">{{object.bio}}  </p>
                             </div>
                             </div>
                         </div>
                     </div>
-                    <div class="container">
+                    {% endfor %}
+                    <!-- <div class="container">
                         <div class="card text-center">
                             <div class=" ">
                                 <img src=" {% static 'website/img/girl.jpg' %}" class="rounded-circle" alt="Profile">
@@ -205,6 +207,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="container">
                         <div class="card text-center">
                             <div class=" ">
@@ -236,6 +239,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="container">
                         <div class="card text-center">
                             <div class=" ">
@@ -266,7 +270,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -301,7 +305,7 @@
     <div class="contact-us-section">
         <div class="container">
             <div class="row">
-                <div class="col-sm anim-top">
+                <div class="col-sm">
                     <h3 class="text-center pt-4 ">Send us Message</h3>
                     <form method="POST" action="{% url 'sms' %}"> {% csrf_token %}
                         <div class="row">
@@ -327,7 +331,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-sm anim-top ">
+                <div class="col-sm">
                     <div class="row pt-4">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2194.369989502896!2d69.12134074982657!3d34.50693764511164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e3!4m0!4m5!1s0x38d168b5fc5bf255%3A0xd7e0fdc4f9f3b13!2z2LTZgdin2K7Yp9mG2Ycg2YXYudin2YTYrNmI24wg2LfZhNmI2Lkg2LXYrdiq2IwgS2FidWwsIEFmZ2hhbmlzdGFu!3m2!1d34.5067854!2d69.1203352!5e0!3m2!1sen!2sae!4v1610272209400!5m2!1sen!2sae" width="600" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>

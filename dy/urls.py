@@ -16,20 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from website import views
-from website.views import PostlistView, PostDetailView
+from website.views import PostlistView, PostDetailView, MemberViewList, IndexViewList
 from django.conf import settings
 from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.index, name="index"),
+    path("", IndexViewList.as_view(), name="index"),
     path("blog", PostlistView.as_view(), name="blog"),
     path("blog/<int:pk>", PostDetailView.as_view(), name="blog-detail"),
     path("contact", views.contact, name="contact"),
     path("initiatives", views.initiatives, name="initiatives"),
     path("report", views.report, name="report"),
-    path("team", views.team, name="team"),
+    path("team", MemberViewList.as_view(), name="team"),
     path("about", views.about, name="about"),
     path("contact/sms", views.sms, name="sms"),
     path('subscribed', views.subscriber , name='subscribe'),
