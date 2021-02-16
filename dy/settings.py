@@ -26,7 +26,7 @@ SECRET_KEY = 'r5e)z+oq8%^)@cny7ambhsh0yv@ka9vp1s300rbxd&ax2vf2!8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["pacific-spire-86111.herokuapp.com", "127.0.0.1", '192.168.1.134']
+ALLOWED_HOSTS = ["pacific-spire-86111.herokuapp.com",'www.dynamicyouth.org','dynamicyouth.org', "127.0.0.1", '192.168.1.134']
 
 
 # Application definition
@@ -89,6 +89,11 @@ WSGI_APPLICATION = 'dy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        # 'USER': 'zaman',
+        # 'NAME': 'dy',
+        # 'PASSWORD': 'E[RF}KsrmZd3',
+        # 'HOST': '',
+        # 'PORT': '',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
@@ -133,6 +138,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# cpanel 
+# url : dynamicyouth.org/cpanel
+# user :dynamicyouth
+# pass :+YVUQ9*&gd#U 
+
+# db : dy
+# user : zaman
+# pass: E[RF}KsrmZd3
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

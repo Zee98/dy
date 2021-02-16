@@ -31,7 +31,9 @@
                         <span class="text-primary">{{post.auther}} | {{post.date_posted}}</span>
                       </div>
                     </div>
-                    <h5 class="card-title "><a class="text-decoration-none" href="{% url 'blog-detail' post.id %}">{{post.title}}</a></h5>
+                    <h5 class="card-title ">
+                      <a class="text-decoration-none" href="{% url 'blog-detail' post.id %}">{{post.title}}</a>
+                    </h5>
                     <p class="card-text">
                       {{post.abstract}}
                     </p>
