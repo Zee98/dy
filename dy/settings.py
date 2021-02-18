@@ -26,7 +26,7 @@ SECRET_KEY = 'r5e)z+oq8%^)@cny7ambhsh0yv@ka9vp1s300rbxd&ax2vf2!8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["pacific-spire-86111.herokuapp.com",'www.dynamicyouth.org','dynamicyouth.org', "127.0.0.1", '192.168.1.134']
+ALLOWED_HOSTS = ["pacific-spire-86111.herokuapp.com",'www.dynamicyouth.org','dynamicyouth.org', "127.0.0.1", '192.168.0.142']
 
 
 # Application definition
