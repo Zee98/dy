@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Storages',
+    'storages',
 ]
 
 MIDDLEWARE = [
