@@ -17,6 +17,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# amazon s3 settings
+# AWS_ACCESS_KEY_ID = 'AKIATW65PWY2LSJEQYVN'
+# AWS_SECRET_ACCESS_KEY ='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'
+# AWS_STORAGE_BUCKET_NAME = 'dynamic-youth-afghanistan'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -39,6 +44,7 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Storages',
 ]
 
 MIDDLEWARE = [
@@ -137,6 +143,21 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# amazon s3 settings
+AWS_ACCESS_KEY_ID = 'AKIATW65PWY2LSJEQYVN'
+AWS_SECRET_ACCESS_KEY ='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'
+AWS_STORAGE_BUCKET_NAME = 'dynamic-youth-afghanistan'
+
+
+AWS_S3_FILE_OVEREWRITE = False
+AWS_DEFAULT_ACL = None
+# DEFAUTL_FILE_STORATE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# to put the static files into s3 backet automatically
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 
 # cpanel 
