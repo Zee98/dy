@@ -11,6 +11,7 @@ class IndexViewList(ListView):
     template_name = 'index.html'
 
 class PostlistView(ListView):
+    
     model = Post
     template_name = 'blog.html'
     context_object_name = 'posts'
