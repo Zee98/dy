@@ -3,6 +3,11 @@ body {
   font-family: "ubuntu";
 }
 
+.justify {
+  text-align: justify; 
+  text-justify: inter-word;
+}
+
 .navbar-color {
   background-color: #02558B !important;
 }
