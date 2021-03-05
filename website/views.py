@@ -54,6 +54,8 @@ def post(request, id=2):
     }
     return render(request, "post.html", data)
 
+def programs(request):
+    return render(request, "programs.html")
 
 def subscriber(request):
     myemail = request.POST.get('email')

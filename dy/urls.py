@@ -28,6 +28,7 @@ urlpatterns = [
     path("blog/<int:pk>", PostDetailView.as_view(), name="blog-detail"),
     path("contact", views.contact, name="contact"),
     path("initiatives", views.initiatives, name="initiatives"),
+    path("programs", views.programs, name="programs"),
     path("report", views.report, name="report"),
     path("team", MemberViewList.as_view(), name="team"),
     path("about", views.about, name="about"),

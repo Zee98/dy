@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'r5e)z+oq8%^)@cny7ambhsh0yv@ka9vp1s300rbxd&ax2vf2!8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["pacific-spire-86111.herokuapp.com",'www.dynamicyouth.org','dynamicyouth.org', "127.0.0.1", '192.168.0.142']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -145,18 +146,38 @@ USE_TZ = True
 
 
 # amazon s3 settings
-# AWS_ACCESS_KEY_ID = 'AKIATW65PWY2LSJEQYVN'
-# AWS_SECRET_ACCESS_KEY ='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'
-# AWS_STORAGE_BUCKET_NAME = 'dynamic-youth-afghanistan'
-
+# AWS_ACCESS_KEY_ID = 'AKIATW65PWY2NYFPYQMD'
+# AWS_SECRET_ACCESS_KEY ='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'
+# AWS_STORAGE_BUCKET_NAME = 'dy--website-files'
 
 # AWS_S3_FILE_OVEREWRITE = False
 # AWS_DEFAULT_ACL = None
 # DEFAUTL_FILE_STORATE = 'storages.backends.s3boto3.S3Boto3Storage'
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_S3_REGION_NAME = "us-east-2"
+
 
 # to put the static files into s3 backet automatically
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+from botocore.client import Config
+AWS_ACCESS_KEY_ID = 'AKIATW65PWY2NYFPYQMD'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'dy--website-files'
+
+# config=Config(signature_version='s3v4')
+
+# this was the error case.
+AWS_S3_REGION_NAME = "us-east-2"
+
+DEFAULT_FILE_STORAGE  = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_DEFAULT_ACL       = None
+AWS_S3_FILE_OVERWRITE = False
+
+# STATIC_URL = '/static/'
+
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+
 
 
 # cpanel 
